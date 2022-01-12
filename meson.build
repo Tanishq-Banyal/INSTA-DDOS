@@ -1,4 +1,5 @@
-project('INSTA-DDOS', 'cpp', subproject_dir: 'libs')
+project('INSTA-DDOS', 'cpp', subproject_dir: 'libs',
+		default_options: ['buildtype=release', 'strip=true'])
 
 cxx = meson.get_compiler('cpp')
 

@@ -1,19 +1,20 @@
 #include <cstdio>
+#include <iostream>
 
 #include <co/co.h>
 #include <co/so/http.h>
 
 DEF_main(argc, argv)
 {
-	http::Client insta{"instagram.com"};
-	
-	for (int i=0 ; i<10000 ; ++i)
+	for (uint i=0 ; i<1000000 ; ++i)
 	{
 		go([&]()
 		{
-			insta.get("/");
+			http::Client insta{"i.instagram.com"};
+			insta.get("/zucc");
+			insta.post("/fk", "da");
+			insta.get("/ducc");
+			insta.close();
 		});
 	}
-	
-	insta.close();
 }
